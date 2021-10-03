@@ -21,12 +21,8 @@ Plug 'vim-scripts/indentpython.vim'
 " Syntax Checking/Highlighting
 Plug 'vim-syntastic/syntastic'
 
-" PEP 8 Checking                
-Plug 'nvie/vim-flake8'       
-
 " Color schemes
 Plug 'jnurmine/Zenburn'
-Plug 'altercation/vim-colors-solarized'
 
 " File browsing
 Plug 'scrooloose/nerdtree'
@@ -44,7 +40,24 @@ Plug 'leafgarland/typescript-vim'
 " All of your Plugins must be added before the following line
 call plug#end()
 
+" Syntastic configurations
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers=['mypy']
+
+
+
 " Other VIM configurations
+
+" Color Scheme
+color zenburn
 
 " Screen split
 set splitbelow
@@ -74,7 +87,7 @@ au BufNewFile,BufRead *.py,*.c,*.h
     \ set fileformat=unix
 
 " JavaScript TypeScript HTML and CSS
-au BufNewFile,BufRead *.js,*.ts,*.html,*.css
+au BufNewFile,BufRead *.js,*.jsx,*.ts,*.tsx,*.html,*.css
     \ set tabstop=2       |
     \ set softtabstop=2   |
     \ set shiftwidth=2    |
