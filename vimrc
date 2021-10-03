@@ -22,7 +22,9 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-syntastic/syntastic'
 
 " Color schemes
-Plug 'jnurmine/Zenburn'
+"Plug 'altercation/vim-colors-solarized' 
+"Plug 'lifepillar/vim-solarized8'
+Plug 'NLKNguyen/papercolor-theme'
 
 " File browsing
 Plug 'scrooloose/nerdtree'
@@ -57,7 +59,9 @@ let g:syntastic_python_checkers=['mypy']
 " Other VIM configurations
 
 " Color Scheme
-color zenburn
+set t_Co=256
+set background=light
+colorscheme PaperColor
 
 " Screen split
 set splitbelow
